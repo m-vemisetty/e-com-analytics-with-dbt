@@ -1,0 +1,4 @@
+order_id,customer_id,order_date,status
+101,1,2023-04-01,shipped
+102,2,2023-04-03,pending
+103,1,2023-04-05,shipped
