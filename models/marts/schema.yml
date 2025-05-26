@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: customer_orders_summary
+    description: "Final summary of customer orders"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
