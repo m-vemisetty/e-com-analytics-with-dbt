@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CUSTOMER_DB      # Replace with your actual Snowflake database name
+    schema: PUBLIC               # Replace with your actual schema name (usually RAW or PUBLIC)
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: payments
+
+
+models:
+  - name: stg_customers
+    description: "Staging model for cleaned customer data"
+    columns:
+      - name: customer_id
+        description: "Unique customer ID"
+        tests:
+          - not_null
+          - unique
+      - name: email
+        description: "Email address of the customer"
